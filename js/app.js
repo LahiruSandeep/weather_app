@@ -141,30 +141,6 @@ let historyDateLabel = document.getElementById("historyDateLabel");
 
 
 
-async function BtnSelectDateOnClick() {
-  const searchbarValue = $("#searchbar-text");
-  var searchbarTypedText = searchbarValue.val();
-  console.log(searchbarTypedText);
-
-  var inputDateValue = inputDate.value;
-  console.log(inputDateValue);
-  historyDateLabel.textContent = inputDateValue;
-
-  try {
-    const historyRes = await $.ajax({
-      method: "GET",
-      url: `https://api.weatherapi.com/v1/history.json?dt=${inputDateValue}&key=89cc63fe3a254352b8d132020231609&q=${searchbarTypedText}`,
-    });
-    console.log("specific his");
-    console.log(historyRes);
-
-  } catch (error) {
-    console.error("Error fetching weather data:", error);
-
-  }
-
-}
-
 
 const searchUrl = "https://api.weatherapi.com/v1/search.json?key=89cc63fe3a254352b8d132020231609&q="
 
